@@ -1,4 +1,3 @@
-":begin
 CREATE RANGE INDEX FOR (n:Person) ON (n.confirmedtime);
 CREATE RANGE INDEX FOR (n:Person) ON (n.healthstatus);
 CREATE RANGE INDEX FOR (n:Person) ON (n.id);
@@ -8,9 +7,7 @@ CREATE RANGE INDEX FOR (n:Place) ON (n.location);
 CREATE RANGE INDEX FOR (n:Place) ON (n.name);
 CREATE CONSTRAINT constraint_2876b1c0 FOR (node:_Bloom_Perspective_) REQUIRE (node.id) IS UNIQUE;
 CREATE CONSTRAINT UNIQUE_IMPORT_NAME FOR (node:`UNIQUE IMPORT LABEL`) REQUIRE (node.`UNIQUE IMPORT ID`) IS UNIQUE;
-:commit
 CALL db.awaitIndexes(300);
-:begin
 UNWIND [{_id:5642, properties:{name:"Europe"}}] AS row
 CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:Continent;
 UNWIND [{_id:501, properties:{duration:duration('PT19H4M37S'), endtime:datetime('2020-04-17T17:27:38Z'), starttime:datetime('2020-04-16T22:23:01Z'), id:"1"}}, {_id:502, properties:{duration:duration('PT22H10M9S'), endtime:datetime('2020-04-29T18:50:01Z'), starttime:datetime('2020-04-28T20:39:52Z'), id:"2"}}, {_id:503, properties:{duration:duration('PT12H28M18S'), endtime:datetime('2020-04-30T11:58:10Z'), starttime:datetime('2020-04-29T23:29:52Z'), id:"3"}}, {_id:504, properties:{duration:duration('PT21H6M45S'), endtime:datetime('2020-05-02T12:01:19Z'), starttime:datetime('2020-05-01T14:54:34Z'), id:"4"}}, {_id:505, properties:{duration:duration('PT2H8M'), endtime:datetime('2020-04-30T05:31:23Z'), starttime:datetime('2020-04-30T03:23:23Z'), id:"5"}}, {_id:506, properties:{duration:duration('PT23H38M37S'), endtime:datetime('2020-04-14T07:11:04Z'), starttime:datetime('2020-04-13T07:32:27Z'), id:"6"}}, {_id:507, properties:{duration:duration('PT2H17M11S'), endtime:datetime('2020-04-18T20:14:04Z'), starttime:datetime('2020-04-18T17:56:53Z'), id:"7"}}, {_id:508, properties:{duration:duration('PT12H47M24S'), endtime:datetime('2020-05-01T09:34:21Z'), starttime:datetime('2020-04-30T20:46:57Z'), id:"8"}}, {_id:509, properties:{duration:duration('PT14H21M29S'), endtime:datetime('2020-04-26T12:03:45Z'), starttime:datetime('2020-04-25T21:42:16Z'), id:"9"}}, {_id:510, properties:{duration:duration('PT21H41M2S'), endtime:datetime('2020-04-19T21:23:31Z'), starttime:datetime('2020-04-18T23:42:29Z'), id:"10"}}, {_id:511, properties:{duration:duration('PT9H49M17S'), endtime:datetime('2020-04-23T06:08:22Z'), starttime:datetime('2020-04-22T20:19:05Z'), id:"11"}}, {_id:512, properties:{duration:duration('PT2H56M33S'), endtime:datetime('2020-05-04T00:16:19Z'), starttime:datetime('2020-05-03T21:19:46Z'), id:"12"}}, {_id:513, properties:{duration:duration('PT17H51M48S'), endtime:datetime('2020-04-10T01:21:48Z'), starttime:datetime('2020-04-09T07:30:00Z'), id:"13"}}, {_id:514, properties:{duration:duration('PT19H49M58S'), endtime:datetime('2020-04-24T04:35:34Z'), starttime:datetime('2020-04-23T08:45:36Z'), id:"14"}}, {_id:515, properties:{duration:duration('PT20H25M28S'), endtime:datetime('2020-04-26T16:50:14Z'), starttime:datetime('2020-04-25T20:24:46Z'), id:"15"}}, {_id:516, properties:{duration:duration('PT20H39M26S'), endtime:datetime('2020-04-29T16:35:26Z'), starttime:datetime('2020-04-28T19:56:00Z'), id:"16"}}, {_id:517, properties:{duration:duration('PT2H23M29S'), endtime:datetime('2020-05-05T21:42:07Z'), starttime:datetime('2020-05-05T19:18:38Z'), id:"17"}}, {_id:518, properties:{duration:duration('PT7H27M49S'), endtime:datetime('2020-04-21T15:56:43Z'), starttime:datetime('2020-04-21T08:28:54Z'), id:"18"}}, {_id:519, properties:{duration:duration('PT10H52M38S'), endtime:datetime('2020-05-05T10:38:56Z'), starttime:datetime('2020-05-04T23:46:18Z'), id:"19"}}, {_id:640, properties:{duration:duration('PT14H6M40S'), endtime:datetime('2020-05-06T17:06:28Z'), starttime:datetime('2020-05-06T02:59:48Z'), id:"20"}}] AS row
@@ -585,8 +582,6 @@ UNWIND [{_id:480, properties:{confirmedtime:datetime('2020-04-10T17:31:23Z'), he
 CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:Person;
 UNWIND [{_id:500, properties:{confirmedtime:datetime('2020-05-01T04:10:11Z'), name:"Rik Van Bruggen", healthstatus:"Healthy", id:"501", addresslocation:point({x: 51.21260081, y: 4.403014237, crs: 'cartesian'})}}] AS row
 CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:Person;
-:commit
-:begin
 UNWIND [{start: {_id:311}, end: {_id:501}, properties:{}}, {start: {_id:295}, end: {_id:502}, properties:{}}, {start: {_id:82}, end: {_id:503}, properties:{}}, {start: {_id:414}, end: {_id:504}, properties:{}}, {start: {_id:38}, end: {_id:505}, properties:{}}, {start: {_id:23}, end: {_id:506}, properties:{}}, {start: {_id:246}, end: {_id:507}, properties:{}}, {start: {_id:115}, end: {_id:508}, properties:{}}, {start: {_id:407}, end: {_id:509}, properties:{}}, {start: {_id:378}, end: {_id:510}, properties:{}}, {start: {_id:415}, end: {_id:511}, properties:{}}, {start: {_id:202}, end: {_id:512}, properties:{}}, {start: {_id:385}, end: {_id:513}, properties:{}}, {start: {_id:185}, end: {_id:514}, properties:{}}, {start: {_id:188}, end: {_id:515}, properties:{}}, {start: {_id:0}, end: {_id:516}, properties:{}}, {start: {_id:203}, end: {_id:517}, properties:{}}, {start: {_id:395}, end: {_id:518}, properties:{}}, {start: {_id:294}, end: {_id:519}, properties:{}}, {start: {_id:221}, end: {_id:640}, properties:{}}] AS row
 MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
 MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
@@ -3631,5 +3626,3 @@ UNWIND [{start: {_id:620}, end: {_id:5640}, properties:{}}] AS row
 MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
 MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
 CREATE (start)-[r:PART_OF]->(end) SET r += row.properties;
-:commit
-"
